@@ -207,7 +207,7 @@ getUserById(){
         this.locationName = this.contractImage[0].activatorDetails.activatorLocation.name;
         this.mobileNum = this.contractImage[0].activatorDetails.mobileNumber;
         this.name = this.contractImage[0].activatorDetails.nameEn;
-        this.uploadedDate =  this.contractImage[0].activatorDetails.uploadedDate;
+        this.uploadedDate =  this.contractImage[0].activatorDetails.timeStamp;
 
       }
     }
@@ -396,7 +396,7 @@ getUserById(){
       this.locationName = this.allContractImages[index].activatorDetails.activatorLocation.name;
       this.mobileNum = this.allContractImages[index].activatorDetails.mobileNumber;
       this.name = this.allContractImages[index].activatorDetails.nameEn;
-      this.uploadedDate =  this.contractImage[index].activatorDetails.uploadedDate;
+      this.uploadedDate =  this.contractImage[index].activatorDetails.timeStamp;
     }else{
       this.locationName = 'N/A';
       this.mobileNum = 'N/A';

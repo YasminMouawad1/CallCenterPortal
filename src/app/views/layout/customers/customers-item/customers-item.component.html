@@ -65,7 +65,7 @@
                 <div class="col-3">
                   <div>
                     <p class="text-muted text-truncate mb-2">Submission Date </p>
-                    <h5 class="mb-0">{{ userItem.SubmissionDate }}</h5>
+                    <h5 class="mb-0">{{ userItem.submitDate | date }}</h5>
                   </div>
                 </div>
               </div>
@@ -306,6 +306,10 @@
         <div class="table-responsive">
           <table class="table table-nowrap mb-0">
             <tbody>
+              <tr *ngFor="let item of userItem.rejectionList">
+             
+                <td><span class="alert alert-danger">{{item.name}}</span></td>
+              </tr>
             </tbody>
           </table>
         </div>
@@ -450,7 +454,7 @@
                     </tr>
                     <tr>
                       <th scope="row">Uploaded date : </th>
-                      <td>{{uploadedDate}}</td>
+                      <td>{{uploadedDate |date}}</td>
                  </tr>
                  </tbody>
               </table>
