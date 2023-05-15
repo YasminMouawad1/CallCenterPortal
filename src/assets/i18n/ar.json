@@ -82,7 +82,7 @@
     "rejection":" الرفض  ",
     "rejectMsg1":" لقد قمت برفض ",
     "rejectMsg2":" تطبيق المخاطر بنجاح  ",
-    "riskLimit":"حد المخاطرة",
+    "finalLimit":"الحد النهائي",
     "NATIONALID":" الرقم القومي",
     "PHONENUMBER":"رقم المحمول",
     "PHONE":"رقم الهاتف",
@@ -123,7 +123,10 @@
     "CREDITLIMIT":"الحد الائتماني",
     "ASSUMEDINCOME":"الدخل المفترض",
     "ExportExcel":" ملف ",
-    "Details":"التفاصيل"
+    "Details":"التفاصيل",
+    "submissionDate":"تاريخ التقديم",
+    "uploadedDate":"تاريخ رفع العقد ",
+    "back":"رجوع"
 
   }
   ,

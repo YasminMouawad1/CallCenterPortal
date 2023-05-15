@@ -84,7 +84,7 @@
     "rejection":"Rejection",
     "rejectMsg1":"You have been rejecting ",
     "rejectMsg2":"Risk Application successfully",
-    "riskLimit":"Risk Limit ",
+    "finalLimit":"final Limit ",
     "NATIONALID":"National Id",
     "PHONENUMBER":"Phone Number",
     "PHONE":"Mobile",
@@ -125,7 +125,10 @@
     "CREDITLIMIT":"Credit Limit",
     "ASSUMEDINCOME":"Assumed Income",
     "ExportExcel":"Export",
-    "Details":"Details"
+    "Details":"Details",
+    "submissionDate":"submission Date",
+    "uploadedDate":"Uploaded Date",
+    "back":"Back"
   }
   ,
   "CONFIGPROFESSIONS":{

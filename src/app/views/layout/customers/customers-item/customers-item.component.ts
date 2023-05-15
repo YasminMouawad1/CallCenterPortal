@@ -14,6 +14,8 @@ import { ToastrService } from 'ngx-toastr';
 import html2canvas from 'html2canvas'; 
 import * as jspdf from 'jspdf';
 
+import {Location} from '@angular/common';
+
 @Component({
   selector: 'app-customers-item',
   templateUrl: './customers-item.component.html',
@@ -87,6 +89,8 @@ export class CustomersItemComponent implements OnInit {
   degree:number = 0;
 
 
+  rejectedMsg:string='Unfortunately you did not meet our criteria.';
+  showRejectedMsg:boolean= false;
 
   salesRepMessage :string = '';
   constructor(
@@ -100,7 +104,8 @@ export class CustomersItemComponent implements OnInit {
     public _TranslateService: TranslateService,
     private _spinnerService: SpinnerService,
     private toastr: ToastrService,
-    private renderer: Renderer2
+    private renderer: Renderer2,
+    private _location: Location
   ) {
 
 
@@ -109,7 +114,7 @@ export class CustomersItemComponent implements OnInit {
 
    ngOnInit() {
 
-
+    this._spinnerService.requestStarted();
 
     this.rejectionValidationForm = this.formBuilder.group({
       rejectionReason: ['', [Validators.required]],
@@ -132,8 +137,7 @@ export class CustomersItemComponent implements OnInit {
     // setTimeout(()=>{
     //   this.loading = false;
     // }, 6000);
-
-    this._spinnerService.requestEnded();
+ 
   }
 
 
@@ -145,10 +149,15 @@ getUserById(){
 
     //  console.log("getUserById", res);
 
-    this._spinnerService.requestEnded();
 
     this.userItem = res.data;
 
+    console.log(this.userItem)
+    console.log(res.data)
+
+
+    if(this.userItem.status == 'rejected')
+    this.showRejectedMsg = true;
 
     for (let i in this.userItem) {
       if (this.userItem[i] === null || this.userItem[i] === '') {
@@ -224,7 +233,11 @@ getUserById(){
         this.maritalStatuses = res.data;
     })
 
+    this._spinnerService.requestEnded();
   });
+
+  
+  this._spinnerService.requestEnded();
 }
   openLightbox(index: number): void {
 
@@ -507,4 +520,8 @@ getUserById(){
 
    }
 
-}
+   backPage(){
+    this._location.back();
+   }
+
+  }
